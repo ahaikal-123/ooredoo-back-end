@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  #service 1: definition of mysql database
+  db:
+    image: mysql:latest
+    container_name: mysql-db2
+    ports:
+      - "3306:3306"
+    restart: always
+
+
+  #service 2: definition of phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: my-php-myadmin
+    ports:
+      - "8082:80"
+    restart: always
+
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root

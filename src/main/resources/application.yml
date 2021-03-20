@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8050}
+spring:
+  application:
+    name: Ooredoo-spa-project
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+            spring:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/ooredoo?createDatabaseIfNotExist=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 5
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      idle-timeout: 10000
+      max-lifetime: 1000
+      auto-commit: true
