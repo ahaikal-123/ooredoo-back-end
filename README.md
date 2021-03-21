@@ -11,7 +11,7 @@ This is a Demo rest API using Spring Boot, mySQL running in docker containers de
 ## Build and Run
 Will build, package and create a new Docker image with the application
  
-```mvn clean install``
+```mvn clean install```
 
 - Launch an Application and a mySQL container in the application root directory :
 
